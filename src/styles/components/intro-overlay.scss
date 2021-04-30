@@ -1,0 +1,66 @@
+.intro-overlay {
+	.top {
+		@include viewportOnMobile;
+		position: absolute;
+		width: 100%;
+		z-index: 8;
+		.overlay-top {
+			position: absolute;
+			height: 100%;
+			width: calc(100vw / 3);
+			background-color: $black;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			@include media('<=tablet') {
+				width: 100vw;
+			}
+			&:nth-child(2) {
+				left: calc(100vw / 3);
+				@include media('<=tablet') {
+					display: none;
+				}
+			}
+			&:nth-child(3) {
+				left: calc(calc(100vw / 3) * 2);
+				@include media('<=tablet') {
+					display: none;
+				}
+			}
+		}
+	}
+	.bottom {
+		@include viewportOnMobile;
+		position: absolute;
+		width: 100%;
+		z-index: 8;
+		bottom: 0;
+		.overlay-bottom {
+			position: absolute;
+			height: 100%;
+			width: calc(100vw / 3);
+			background-color: $black;
+			bottom: 0;
+			right: calc(calc(100vw / 3) * 2);
+			@include media('<=tablet') {
+				right: 0;
+				width: 100vw;
+			}
+			&:nth-child(2) {
+				right: calc(100vw / 3);
+				@include media('<=tablet') {
+					width: 100vw;
+					top: 100%;
+					right: 0;
+				}
+			}
+			&:nth-child(3) {
+				right: 0;
+				@include media('<=tablet') {
+					width: 100vw;
+					top: 200%;
+				}
+			}
+		}
+	}
+}
