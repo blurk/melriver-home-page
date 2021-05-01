@@ -1,13 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function Navigation() {
+const Navigation = () => {
 	return (
 		<nav>
 			<div className='container'>
 				<div className='nav-columns'>
 					<div className='nav-column'>
-						<div className='nav-label'>Menu</div>
 						<ul className='nav-links'>
 							<li>
 								<NavLink to='/case-studies' exact>
@@ -26,13 +25,12 @@ export default function Navigation() {
 							</li>
 							<li>
 								<NavLink to='/about-us' exact>
-									About Us
+									About us
 								</NavLink>
 							</li>
 						</ul>
 					</div>
 					<div className='nav-column'>
-						<div className='nav-label'>Contact</div>
 						<div className='nav-infos'>
 							<ul className='nav-info'>
 								<li className='nav-info-label'>Email</li>
@@ -43,13 +41,13 @@ export default function Navigation() {
 								</li>
 								<li>
 									<NavLink to='/audit' exact>
-										Get free audit
+										Get a free audit
 									</NavLink>
 								</li>
 							</ul>
 							<ul className='nav-info'>
-								<li className='nav-info-label'>Headquaters</li>
-								<li>Route du Jura 49 </li>
+								<li className='nav-info-label'>Headquarter</li>
+								<li>Route du Jura 49</li>
 								<li>1700 Fribourg</li>
 								<li>Switzerland</li>
 							</ul>
@@ -61,7 +59,7 @@ export default function Navigation() {
 							</ul>
 							<ul className='nav-info'>
 								<li className='nav-info-label'>Legal</li>
-								<li>Privacy and Cookies</li>
+								<li>Privacy & Cookies</li>
 							</ul>
 						</div>
 					</div>
@@ -69,4 +67,6 @@ export default function Navigation() {
 			</div>
 		</nav>
 	);
-}
+};
+
+export default Navigation;

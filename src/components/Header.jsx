@@ -123,28 +123,22 @@ function Header({ dimensions, history }) {
 	}, [isMenuOpened]);
 
 	return (
-		<div className='header'>
-			<div className='container'>
-				<div className='row v-center space-between'>
-					<div className='logo'>
-						<NavLink to='/'>AGENCY.</NavLink>
-					</div>
-					<div className='nav-toggle'>
-						<div
-							className='hamburger-menu'
-							onClick={() => setIsMenuOpened(true)}>
-							<span></span>
-							<span></span>
-						</div>
-						<div
-							className='hamburger-menu-close'
-							onClick={() => setIsMenuOpened(false)}>
-							<UpArrow />
-						</div>
-					</div>
+		<>
+			<div className='header-item logo'>
+				<NavLink to='/'>AGENCY.</NavLink>
+			</div>
+			<div className='header-item nav-toggle'>
+				<div className='hamburger-menu' onClick={() => setIsMenuOpened(true)}>
+					<span></span>
+					<span></span>
+				</div>
+				<div
+					className='hamburger-menu-close'
+					onClick={() => setIsMenuOpened(false)}>
+					<UpArrow />
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 

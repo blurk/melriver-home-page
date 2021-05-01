@@ -1,21 +1,16 @@
 nav {
-	position: fixed;
 	left: 0;
 	top: -1px;
 	width: 100%;
-	height: 100%;
+	height: 50vh;
 	z-index: 1;
+	position: fixed;
 	overflow: hidden;
 	background: $yellow;
+	padding: 20px 0 0;
 	a {
 		position: relative;
-		&:hover {
-			&::after {
-				width: 100%;
-				left: 0;
-			}
-		}
-		&::after {
+		&:after {
 			content: '';
 			position: absolute;
 			width: 0;
@@ -26,58 +21,35 @@ nav {
 			background: $black;
 			transition: 0.4s ease;
 		}
+		&:hover {
+			color: pink;
+			&:after {
+				width: 100%;
+				left: 0;
+				background: $black;
+			}
+		}
 	}
 	.nav-columns {
-		transform: translateY(125px);
 		display: flex;
 		padding: 0 32px;
-		@include media('<=645px') {
+		@include media('<=654px') {
+			margin-top: 20vh;
 			flex-direction: column;
-		}
-		@include media('<=phone') {
-			padding: 0 16px;
+			@include media('<=phone') {
+				padding: 0 16px;
+			}
 		}
 		.nav-column {
+			align-self: flex-end;
 			width: 45%;
-			@include media('<=645px') {
+			@include media('<=654px') {
 				width: 100%;
 			}
 			&:last-child {
 				width: 55%;
-				@include media('<=645px') {
+				@include media('<=654px') {
 					width: 100%;
-				}
-			}
-			.nav-label {
-				margin-bottom: 3rem;
-				font-size: 1.2rem;
-				@include media('<=tablet') {
-					font-size: 1rem;
-					margin-bottom: 1.4rem;
-				}
-				@include media('<=phone') {
-					font-size: 0.875rem;
-					margin-bottom: 1.2rem;
-				}
-			}
-			.nav-links {
-				padding: 0;
-				margin: 0;
-				li {
-					list-style: none;
-					margin-bottom: 2.4rem;
-					@include media('<=phone') {
-						margin-bottom: 1.6rem;
-					}
-					a {
-						font-weight: 600;
-						font-size: 2.8rem;
-						text-decoration: none;
-						color: $black;
-						@include media('<=phone') {
-							font-size: 2rem;
-						}
-					}
 				}
 			}
 			.nav-infos {
@@ -96,24 +68,46 @@ nav {
 						}
 					}
 					.nav-info-label {
-						font-weight: 6000;
+						font-weight: 600;
 					}
 					li {
 						font-weight: 300;
 						list-style: none;
-						font-size: 1.4rem;
+						font-size: 1.2rem;
 						margin-bottom: 1.2rem;
 						@include media('<=tablet') {
-							font-size: 1.2rem;
+							font-size: 0.8rem;
 							margin-bottom: 1rem;
 						}
 						@include media('<=phone') {
-							font-size: 1rem;
-							margin-bottom: 0.875rem;
+							font-size: 0.75rem;
+							margin-bottom: 0.75rem;
 						}
 						a {
 							text-decoration: none;
 							color: $black;
+						}
+					}
+				}
+			}
+			.nav-links {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				padding: 0;
+				margin: 0;
+				li {
+					list-style: none;
+					margin-bottom: 2.4rem;
+					@include media('<=phone') {
+						margin-bottom: 1.6rem;
+					}
+					a {
+						font-weight: 600;
+						font-size: 1.6875rem;
+						text-decoration: none;
+						color: $black;
+						@include media('<=phone') {
+							font-size: 1.6rem;
 						}
 					}
 				}
