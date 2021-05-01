@@ -50,21 +50,18 @@ function debounce(fn, ms) {
 }
 
 function App() {
-	gsap.to('body', 0, {
-		css: { visibility: 'visible' }
-	});
-
-	const [dimension, setDimension] = useState({
+	const [dimensions, setdimensions] = useState({
 		height: window.innerHeight,
 		width: window.innerWidth
 	});
 
 	useEffect(() => {
-		let vh = dimension.height * 0.01;
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		gsap.to('body', 0, {
+			css: { visibility: 'visible' }
+		});
 
 		const debouncedHandleResize = debounce(function handleResize() {
-			setDimension({
+			setdimensions({
 				height: window.innerHeight,
 				width: window.innerWidth
 			});
@@ -78,16 +75,13 @@ function App() {
 
 	return (
 		<>
-			<Header />
+			<Header dimensions={dimensions} />
 
 			<div className='App'>
-				{routes.map((route) => (
-					<Route
-						key={route.path}
-						component={route.component}
-						exact
-						path={route.path}
-					/>
+				{routes.map(({ path, component: Component }) => (
+					<Route key={path} exact path={path}>
+						<Component dimensions={dimensions} />
+					</Route>
 				))}
 			</div>
 			<Navigation />

@@ -31,7 +31,6 @@ export default function Navigation() {
 							</li>
 						</ul>
 					</div>
-
 					<div className='nav-column'>
 						<div className='nav-label'>Contact</div>
 						<div className='nav-infos'>
@@ -54,7 +53,6 @@ export default function Navigation() {
 								<li>1700 Fribourg</li>
 								<li>Switzerland</li>
 							</ul>
-
 							<ul className='nav-info'>
 								<li className='nav-info-label'>Phone</li>
 								<li>
