@@ -2,24 +2,28 @@ import React from 'react';
 import { ReactComponent as CasesPrev } from '../assets/arrow-left.svg';
 import { ReactComponent as CasesNext } from '../assets/arrow-right.svg';
 
+import curologyMin from '../assets/curology-min.png';
+import yourspaceMin from '../assets/yourspace-min.png';
+import luminMin from '../assets/lumin-min.png';
+
 const caseStudies = [
 	{
 		id: 'case-1',
 		subtitle: 'Curology',
 		title: "A custom for your skin's unique needs",
-		img: 'curology-min'
+		img: curologyMin
 	},
 	{
 		id: 'case-2',
 		subtitle: 'Yourspace',
 		title: 'Open space floor plans for your next venture',
-		img: 'yourspace-min'
+		img: yourspaceMin
 	},
 	{
 		id: 'case-3',
 		subtitle: 'Lumin',
 		title: 'For your best look ever',
-		img: 'lumin-min'
+		img: luminMin
 	}
 ];
 
@@ -43,10 +47,7 @@ export default function Cases() {
 								<h2>{caseStudy.title}</h2>
 							</div>
 							<div className='case-image'>
-								<img
-									src={`/src/assets/${caseStudy.img}.png`}
-									alt={caseStudy.title}
-								/>
+								<img src={caseStudy.img} alt={caseStudy.title} />
 							</div>
 						</div>
 					))}
